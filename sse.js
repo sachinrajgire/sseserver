@@ -4,8 +4,9 @@ var { mktdata } = require ('./marketdata.js');
 var { MktSim } = require ('./mktsim.js');
 
 
-// const hostname = '127.0.0.1';
-let  port = process.env.PORT || 3333
+const hostname = process.env.NODE_ENV === 'production' ? `https://sse-server-p.herokuapp.com/` : '127.0.0.1';
+console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
+let  port = process.env.PORT || 3333 ;
 var sim = new MktSim();
 var app = express();
 
