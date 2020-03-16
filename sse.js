@@ -4,8 +4,8 @@ var { mktdata } = require ('./marketdata.js');
 var { MktSim } = require ('./mktsim.js');
 
 
-const hostname = '127.0.0.1';
-const port = 3333;  // dont use 3000, other use it
+// const hostname = '127.0.0.1';
+let  port = process.env.PORT || 3333
 var sim = new MktSim();
 var app = express();
 
